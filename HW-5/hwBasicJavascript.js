@@ -12,7 +12,7 @@ myForm.addEventListener("submit",  (e) => {
 
     
          e.preventDefault();
-         const dataBaru = await new Person(nameInput, ageInput,moneyInput);
+         const dataBaru = new Person(nameInput, ageInput,moneyInput);
 
         data.push({nama: dataBaru.name, umur: dataBaru.age, uang:dataBaru.money})
   
