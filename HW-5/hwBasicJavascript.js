@@ -5,6 +5,24 @@ let ageInput = myForm.elements["umur"];
 let moneyInput = myForm.elements["uang"];
 const toasterNotif = document.getElementById("success-notif");
 
+document.getElementById("defaultOpen").click();
+function openTabs (evt, pageName){
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+   tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(pageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
 
 
 myForm.addEventListener("submit",  (e) => {
@@ -22,7 +40,7 @@ myForm.addEventListener("submit",  (e) => {
         averageUmur(data)
         
         document.querySelector("#table tbody").innerHTML = data.map((user, index) => `
-        <tr>
+        <tr class="text-center">
         <td>${index + 1}</td>
         <td>${user.nama}</td>
         <td>${user.umur}</td>
@@ -31,6 +49,9 @@ myForm.addEventListener("submit",  (e) => {
         )
         .join('')
         showToaster() 
+        nameInput.value = "";
+        ageInput.value = "";
+        moneyInput.value = "";
 });
 
 

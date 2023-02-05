@@ -14,31 +14,57 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="defaultOpen" class="nav-link tablinks" href="#" onclick="openTabs(event,'home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tablinks" href="#" onclick="openTabs(event,'showregister')">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tablinks" href="#" onclick="openTabs(event,'showtable')">Data</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center">RAKAMIN ACADEMY</h1>
+        <di id="showtable" class="tabcontent">
+            <h1 class="text-center">RAKAMIN ACADEMY</h1>
 
-        <table id="table" class="table shadow rounded-3 justify-content-between">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Umur</th>
-                    <th scope="col">Uang Saku</th>
-                </tr>
-            </thead>
-            <tbody>
+            <table id="table" class="table shadow rounded-3 justify-content-between">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">#</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Umur</th>
+                        <th scope="col">Uang Saku</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
-        <div class="d-flex">
-            <p class="me-2">Rata-Rata Uang Saku: </p>
-            <p id="money">0</p>
-        </div>
-        <div class="d-flex">
-            <p class="me-2">Rata-Rata Usia: </p>
-            <p class="age">0</p>
-        </div>
+                </tbody>
+            </table>
+            <div class="d-flex">
+                <p class="me-2">Rata-Rata Uang Saku: </p>
+                <p id="money">0</p>
+            </div>
+            <div class="d-flex">
+                <p class="me-2">Rata-Rata Usia: </p>
+                <p class="age">0</p>
+            </div>
+
+        </di>
+
     </div>
 
 
@@ -49,23 +75,27 @@
 
 
     <div class="container mt-5">
-        <form action="" id="myForm">
-            <div class="mb-3">
-                <label for="InputName" class="form-label">Nama</label>
-                <input type="text" name="nama" value="" class="form-control" id="InputNama" minlength="10"
-                    autocomplete="off">
-            </div>
-            <div class="mb-3">
-                <label for="InputUmur" class="form-label">Umur</label>
-                <input type="number" name="umur" value="" class="form-control" id="InputUmur" min="25">
-            </div>
-            <div class="mb-3">
-                <label for="InputUangSaku" class="form-label">Uang Saku</label>
-                <input type="number" name="uang" value="" class="form-control" id="InputUangSaku" min="100000"
-                    max="1000000">
-            </div>
-            <button type=" submit" class="btn btn-primary">Submit</button>
-        </form>
+        <div id="showregister" class="tabcontent">
+            <form action="" id="myForm">
+                <div class="mb-3">
+                    <label for="InputName" class="form-label">Nama</label>
+                    <input type="text" name="nama" value="" class="form-control" id="InputNama" minlength="10"
+                        autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="InputUmur" class="form-label">Umur</label>
+                    <input type="number" name="umur" value="" class="form-control" id="InputUmur" min="25">
+                </div>
+                <div class="mb-3">
+                    <label for="InputUangSaku" class="form-label">Uang Saku</label>
+                    <input type="number" name="uang" value="" class="form-control" id="InputUangSaku" min="100000"
+                        max="1000000">
+                </div>
+                <button type=" submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
     </div>
 
 
